@@ -13,6 +13,7 @@ class MealDetailsScreen extends StatelessWidget {
         title: Text(meal.title),
       ),
       body: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -56,11 +57,14 @@ class MealDetailsScreen extends StatelessWidget {
             ),
             const SizedBox(height: 14),
             for (final step in meal.steps)
-              Text(
-                '- $step',
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: Theme.of(context).colorScheme.onBackground,
-                    ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                child: Text(
+                  '- $step',
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: Theme.of(context).colorScheme.onBackground,
+                      ),
+                ),
               ),
           ],
         ),
